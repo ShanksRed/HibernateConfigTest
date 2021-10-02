@@ -21,11 +21,11 @@ public class AlgorithmImpl implements statAlgrithm{
         for (int i = 0; i < chars.length-4; i++) {
             //map.putIfAbsent(chars[i],0);
             //map.computeIfPresent(chars[i], (k,v) -> v +1);
-            map.putIfAbsent(String.valueOf(chars[i]),0);
-            map.putIfAbsent(String.valueOf(chars[i]) + String.valueOf(chars[i+1]),0);
-            map.putIfAbsent(String.valueOf(chars[i]) + String.valueOf(chars[i+1])+String.valueOf(chars[i+2]),0);
-            map.putIfAbsent(String.valueOf(chars[i]) + String.valueOf(chars[i+1])+String.valueOf(chars[i+2])+String.valueOf(chars[i+3]),0);
-            map.putIfAbsent(String.valueOf(chars[i]) + String.valueOf(chars[i+1])+String.valueOf(chars[i+2])+String.valueOf(chars[i+3]) + String.valueOf(chars[i+4]),0);
+            map.putIfAbsent(String.valueOf(chars[i]),1);
+            map.putIfAbsent(String.valueOf(chars[i]) + String.valueOf(chars[i+1]),1);
+            map.putIfAbsent(String.valueOf(chars[i]) + String.valueOf(chars[i+1])+String.valueOf(chars[i+2]),1);
+            map.putIfAbsent(String.valueOf(chars[i]) + String.valueOf(chars[i+1])+String.valueOf(chars[i+2])+String.valueOf(chars[i+3]),1);
+            map.putIfAbsent(String.valueOf(chars[i]) + String.valueOf(chars[i+1])+String.valueOf(chars[i+2])+String.valueOf(chars[i+3]) + String.valueOf(chars[i+4]),1);
             map.computeIfPresent(String.valueOf(chars[i]), (k,v) -> v +1);
             map.computeIfPresent(String.valueOf(chars[i]) + String.valueOf(chars[i+1])+String.valueOf(chars[i+2]), (k,v) -> v +1);
             map.computeIfPresent(String.valueOf(chars[i]) + String.valueOf(chars[i+1])+String.valueOf(chars[i+2])+String.valueOf(chars[i+3]), (k,v) -> v +1);

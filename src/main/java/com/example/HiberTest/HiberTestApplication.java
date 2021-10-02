@@ -5,6 +5,8 @@ import com.example.HiberTest.Entities.text;
 import com.example.HiberTest.Entities.textTable;
 import com.example.HiberTest.SessionConfig.sessionFactoryConfig;
 import com.example.HiberTest.Statistics.characterStats;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,6 +20,8 @@ import java.util.List;
 
 @SpringBootApplication
 public class HiberTestApplication implements CommandLineRunner {
+
+	//Logger logger = LoggerFactory.getLogger(HiberTestApplication.class);
 
 	@Autowired
 	daoRepository dao;
@@ -35,7 +39,11 @@ public class HiberTestApplication implements CommandLineRunner {
 
 		stat.getTextForStatistics();
 		stat.getStatistics();
-		stat.printStat();
+		//stat.printStat();
+		//stat.
+		stat.getSorted();
+		//stat.printStat();
+		stat.printStatisticsToFile();
 		listToString(dao.findAll());
 	}
 
