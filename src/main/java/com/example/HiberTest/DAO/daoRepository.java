@@ -1,6 +1,7 @@
 package com.example.HiberTest.DAO;
 
 import com.example.HiberTest.Entities.text;
+import com.example.HiberTest.Entities.textTable;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,14 +15,16 @@ import java.util.List;
 @Repository("daoRepository")
 public class daoRepository implements simpleDao{
 
+
     @Autowired
-    SessionFactory sf;
+    private SessionFactory sessionFactory;
 
 
     @Override
     @Transactional
-    public List<text> findAll() {
-        return sf.getCurrentSession().createQuery("from text t").list();
+    public List<textTable> findAll() {
+
+        return sessionFactory.getCurrentSession().createQuery("from textTable t").list();
         //return null;
     }
 }
